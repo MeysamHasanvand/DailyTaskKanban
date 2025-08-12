@@ -1,0 +1,26 @@
+\
+    <!doctype html>
+    <html>
+    <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Archive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="p-3">
+    <div class="container">
+      <h3>Archive — {{ title }}</h3>
+      <a class="btn btn-sm btn-outline-secondary mb-3" href="/archive">Back</a>
+      <div class="list-group">
+        {% for t in tasks %}
+        <div class="list-group-item">
+          <strong>{{ t.title }}</strong>
+          <div class="small text-muted">Date: {{ t.task_date }} — Column index: {{ t.column_index }}</div>
+          {% if t.description %}<div>{{ t.description }}</div>{% endif %}
+        </div>
+        {% else %}
+        <div class="list-group-item">No tasks.</div>
+        {% endfor %}
+      </div>
+    </div>
+    </body>
+    </html>
